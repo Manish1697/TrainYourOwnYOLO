@@ -136,7 +136,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--epochs",
         type=int,
-        default=51,
+        default=5,
         help="Number of epochs for training last layers and number of epochs for fine-tuning layers. Default is 51.",
     )
     parser.add_argument(
@@ -270,7 +270,7 @@ if __name__ == "__main__":
 
     # Unfreeze and continue training, to fine-tune.
     # Train longer if the result is unsatisfactory.
-
+    """
     full_callbacks = [logging, checkpoint, reduce_lr, early_stopping]
 
     if _has_wandb:
@@ -304,3 +304,4 @@ if __name__ == "__main__":
         callbacks=full_callbacks,
     )
     model.save_weights(os.path.join(log_dir, "trained_weights_final.h5"))
+    """
